@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ms-store-products
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    hostname: ${HOSTNAME:ms-store-products}
+
+elasticsearch:
+  host: ${ELASTICSEARCH_HOST:ebass-store-products-4459085262.us-east-1.bonsaisearch.net}
+  credentials:
+    user: ${ELASTICSEARCH_USER:ms7cop8z93}
+    password: ${ELASTICSEARCH_PWD:dg5emx59wx}
