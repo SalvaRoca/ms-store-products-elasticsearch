@@ -1,12 +1,11 @@
 package com.bassmania.msstoreproductselasticsearch.service;
 
 import com.bassmania.msstoreproductselasticsearch.data.DataAccessRepository;
+import com.bassmania.msstoreproductselasticsearch.model.response.ProductsQueryResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import com.bassmania.msstoreproductselasticsearch.model.Product;
-
-import java.util.List;
+import com.bassmania.msstoreproductselasticsearch.model.db.Product;
 
 @Service
 @RequiredArgsConstructor
@@ -15,8 +14,8 @@ public class ProductsServiceImpl implements ProductsService {
 	private final DataAccessRepository dataAccessRepository;
 
 	@Override
-	public List<Product> getProducts(String productRef, String category, String brand, String model, String description) {
-		return dataAccessRepository.findProducts(productRef, category, brand, model, description);
+	public ProductsQueryResponse getProducts(String productRef, String category, String brand, String model, String description, Double priceMin, Double priceMax, String aggregate) {
+		return dataAccessRepository.findProducts(productRef, category, brand, model, description, priceMin, priceMax, aggregate);
 	}
 
 	@Override

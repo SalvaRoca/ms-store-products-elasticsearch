@@ -1,4 +1,4 @@
-package com.bassmania.msstoreproductselasticsearch.model;
+package com.bassmania.msstoreproductselasticsearch.model.db;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -24,7 +24,7 @@ public class Product {
 	@Field(type = FieldType.Keyword, name = "category")
 	private String category;
 
-	@Field(type = FieldType.Text, name = "brand")
+	@Field(type = FieldType.Keyword, name = "brand")
 	private String brand;
 
 	@Field(type = FieldType.Text, name = "model")
