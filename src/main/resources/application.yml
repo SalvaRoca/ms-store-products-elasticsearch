@@ -3,7 +3,7 @@ spring:
     name: ms-store-products
 
 server:
-  port: 8081
+  port: ${PORT:8081}
 
 eureka:
   client:
@@ -14,7 +14,7 @@ eureka:
     hostname: ${HOSTNAME:ms-store-products}
 
 elasticsearch:
-  host: ${ELASTICSEARCH_HOST:ebass-store-products-4459085262.us-east-1.bonsaisearch.net}
+  host: ${ELASTICSEARCH_HOST}
   credentials:
-    user: ${ELASTICSEARCH_USER:ms7cop8z93}
-    password: ${ELASTICSEARCH_PWD:dg5emx59wx}
+    user: ${ELASTICSEARCH_USER}
+    password: ${ELASTICSEARCH_PWD}
